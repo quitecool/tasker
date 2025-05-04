@@ -38,6 +38,10 @@ bh, bm = st.columns(2)
 st.session_state.bedtime_hour = bh.number_input("Bedtime Hour", 0, 23, st.session_state.bedtime_hour)
 st.session_state.bedtime_minute = bm.number_input("Minute", 0, 59, st.session_state.bedtime_minute)
 
+# --- Manual refresh button ---
+if st.button("🔄 Refresh Timers"):
+    st.experimental_rerun()
+
 st.divider()
 
 # --- Task List ---

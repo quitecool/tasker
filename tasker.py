@@ -40,7 +40,7 @@ st.session_state.bedtime_minute = bm.number_input("Minute", 0, 59, st.session_st
 
 # --- Manual refresh button ---
 if st.button("🔄 Refresh Timers"):
-    st.experimental_rerun()
+    st.rerun()
 
 st.divider()
 
@@ -65,7 +65,7 @@ for i, task in enumerate(st.session_state.tasks):
             task["actual"] = int(task["elapsed"] // 60)
     if cols[3].button("🗑️", key=f"del_{i}"):
         st.session_state.tasks.pop(i)
-        st.experimental_rerun()
+        st.rerun()
 
 st.divider()
 
